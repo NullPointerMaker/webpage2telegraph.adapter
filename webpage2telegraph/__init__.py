@@ -10,7 +10,7 @@ def clear_url(url):
     return url
 
 
-export_to_telegraph.clear_url = clear_url
+export_to_telegraph.clearUrl = clear_url
 
 
 def get_author_field(author, noSourceLink):
