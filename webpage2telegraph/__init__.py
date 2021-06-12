@@ -33,11 +33,10 @@ def get_author_field(author, noSourceLink):
 export_to_telegraph.getAuthorField = get_author_field
 
 
-def transfer(url, throw_exception=False, source=False, simplify=False, force_cache=False, no_auto_convert=False):
+def transfer(url, throw_exception=True, source=False, simplify=False):
     return export_to_telegraph.export(url,
+                                      force=True,
                                       throw_exception=throw_exception,
                                       noSourceLink=not source,
-                                      toSimplified=simplify,
-                                      force=force_cache,
-                                      noAutoConvert=no_auto_convert
+                                      toSimplified=simplify
                                       )
