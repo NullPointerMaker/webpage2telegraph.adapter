@@ -7,6 +7,15 @@ export_to_telegraph.name = 'webpage2telegraph'
 
 
 def clear_url(url):
+    """
+    This function was originally used to remove useless parameters in the link.
+    But I think the original code is too rough:
+    Filter all URLs by default.
+    For security reasons, I will not show the source links by default.
+    If we want to filter the parameters, then we need to filter for each website.
+    :param url: URL
+    :return: URL
+    """
     return url
 
 
