@@ -2,7 +2,7 @@
 
 Adapter library to [Export to Telegraph](https://github.com/gaoyunzhi/export_to_telegraph): Transfer webpage to
 Telegraph archive.  
-hacking with monkey patches.
+Hacking with monkey patches.
 
 ## Usage
 
