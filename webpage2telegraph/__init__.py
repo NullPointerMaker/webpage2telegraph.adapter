@@ -13,6 +13,17 @@ def clear_url(url):
 export_to_telegraph.clear_url = clear_url
 
 
+def get_author_field(author, noSourceLink):
+    if author =='Source':
+        if noSourceLink:
+            return ''
+        return '原文'
+    return author
+
+
+export_to_telegraph.getAuthorField = get_author_field
+
+
 def transfer(url, throw_exception=False, source=False, simplify=False, force_cache=False, no_auto_convert=False):
     return export_to_telegraph.export(url,
                                       throw_exception=throw_exception,
