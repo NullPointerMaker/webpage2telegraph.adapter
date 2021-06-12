@@ -23,7 +23,7 @@ export_to_telegraph.clearUrl = clear_url
 
 
 def get_author_field(author, noSourceLink):
-    if author =='Source':
+    if author == 'Source':
         if noSourceLink:
             return ''
         return '原文'
