@@ -41,8 +41,9 @@ def get_article(url, throw_exception=False, toSimplified=False, force_cache=Fals
                          toSimplified=toSimplified,
                          force_cache=force_cache,
                          noAutoConvert=noAutoConvert)
-    if throw_exception and article.text and re.match(r'HTTP \d{3}', article.text.text):
-        raise IOError(article.text.text)
+    if throw_exception and article.text and re.match(r'HTTP \d{3}', str(article.text)):
+        raise IOError(str(article.text))
+    return article
 
 
 export_to_telegraph.getArticle = get_article
