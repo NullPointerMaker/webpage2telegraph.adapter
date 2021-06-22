@@ -4,6 +4,7 @@ import re
 
 import export_to_telegraph
 from export_to_telegraph import getArticle
+from html_telegraph_poster.utils import DocumentPreprocessor
 
 export_to_telegraph.name = 'webpage2telegraph'
 
@@ -47,6 +48,23 @@ def get_article(url, throw_exception=False, toSimplified=False, force_cache=Fals
 
 
 export_to_telegraph.getArticle = get_article
+
+
+export_to_telegraph.TelegraphPoster.post_origin = export_to_telegraph.TelegraphPoster.post
+
+
+# noinspection PyBroadException
+def _post(self, title, author, text, author_url):
+    try:
+        dp = DocumentPreprocessor(text)
+        dp.upload_all_images()
+        text = dp.get_processed_html()
+    except:
+        pass
+    return self.post_origin(title, author, text, author_url)
+
+
+export_to_telegraph.TelegraphPoster.post = _post
 
 
 def transfer(url, throw_exception=True, source=False, simplify=False):

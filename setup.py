@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="webpage2telegraph",
-    version="2021.6.14",
+    version="2021.6.22",
     author="NullPointerMaker",
     description="Transfer webpage to Telegraph archive.",
     long_description=long_description,
@@ -18,7 +18,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=[
-        'export_to_telegraph',
+        'export_to_telegraph>=0.0.128',
+        'html_telegraph_poster>=0.4.0',
     ],
     python_requires='>=3.0',
 )
