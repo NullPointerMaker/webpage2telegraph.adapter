@@ -42,8 +42,8 @@ def get_article(url, throw_exception=False, toSimplified=False, force_cache=Fals
                          toSimplified=toSimplified,
                          force_cache=force_cache,
                          noAutoConvert=noAutoConvert)
-    if throw_exception and article.text and re.match(r'HTTP \d{3}', str(article.text)):
-        raise IOError(str(article.text))
+    if throw_exception and article.text and article.text.text and re.match(r'HTTP \d{3}', str(article.text.text)):
+        raise IOError(str(article.text.text))
     return article
 
 
